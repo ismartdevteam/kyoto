@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="left-nav-pink" style="color:white;">Бүтээгдэхүүн </div>
+
+	<input class="form-control" style="margin:10px;"  type="text" ng-model="newcontent.title_mn" placeholder="Нэр Монгол" required>
+	<input class="form-control" style="margin:10px;"type="text" ng-model="newcontent.title_en" placeholder="Нэр Англи">
+	<input type="text" class="form-control"style="margin:10px; height:200px;" ng-model="newcontent.desc_mn" placeholder="Тайлбар Монгол">
+	<input type="text" class="form-control" style="margin:10px;height:200px;"ng-model="newcontent.desc_en" placeholder="Тайлбар Англи">
+	
+	<input type="text" class="form-control" style="margin:10px;"ng-model="newcontent.price" placeholder="Үнэ">
+	<div class="col-md-4">
+		<input type="file" nv-file-select="" uploader="uploader" />
+
+		<div class="progress" style="margin:10px 0px 10px 0px;">
+			<div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }">{{uploader.progress}}%</div>
+		</div>
+		<button type="button" class="btn btn-success btn-xs" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading ">
+			Нэмэх
+		</button>
+	</div>
+</div>
+<div class="container">
+	<div class"row" ng-repeat="content in product">
+		<div class="container" >
+			<div class="left-text" ><img ng-src="/kyoto{{content.img_src}}"/> </div>
+			<div > 
+				<h3 style="margin:10px 0 0 0 ;">{{content.title}}</h3>
+
+				<p>{{content.description}}</p>
+				<div align="right"><span translate  class="h2">{{'price'}}</span> <span class="h2 price-tag">{{content.price}}</span>  </div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-danger" ng-click="deleteContent(product,$index,content.id)" ng-confirm-click="Энэ өгөгдлийг устгах уу">Устгах</button>
+		<hr class="no-padding"></hr>
+	</div>
+</div>
+
+

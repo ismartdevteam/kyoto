@@ -1,0 +1,48 @@
+{
+	"checkData":"Check the fields",
+	"send":"Send",
+	"yourname":"Your name",
+	"email":"Email",
+	"faq":"Feedback",
+	"login": "LOGIN",
+	"more": "More",
+	"home":"HOME",
+	"about":"ABOUT US",
+	"news":"NEWS",
+	"service":"SERVICE",
+	"product":"PRODUCT",
+	"contact":"CONTACT",
+	"worrying":"WORRYING",
+
+	"welcome":"Welcome to our website",
+	"timetable":"TIMETABLE",
+	"timetable-days":"MONDAY - SUNDAY",
+
+	"left-group1":"WORRYING",
+
+
+	"left-group2":"CARE",
+
+
+
+	"left-group3":"Women's special",
+
+
+
+	"left-group4":"Men's special",
+
+
+	"footer_contact_us":"Contact us",
+	"footer_contact":"Contact",
+	"footer_about_us":"About us",
+	"footer_products":"Products",
+	"footer_services":"Services",
+	"footer_reservation":"Reservation",
+	"footer_faculty":"Branch",
+	"footer_address":"Address",
+	"footer_address_info":"Ulaanbaatar City, Sukhbaatar duureg, 2nd khoroo, Seoul Street, Twintower-1, 8th floor",
+	"price":"Price",
+	"diamond-pill":"ДАЙМОНД ПИЙЛ",
+	"about-desc":"Уг төхөөрөмж нь арьсны хэв шинжээс нь шалтгаалан алмаазан болон болор нунтагыг сонгон авч арьсны үхэжсэн өнгөн хөрсийг гуужуулагч төхөөрөмж юм. Энэ эмчилгээг хийснээрээ арьсны шинэ эд эсийн төлжилтийг хурдасгаж арьсны өнгө цайрч өнгөлөг болохоос гадна нэгэн жигд толигор болно"
+
+}

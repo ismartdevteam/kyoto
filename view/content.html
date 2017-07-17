@@ -1,0 +1,43 @@
+<div >
+
+
+	<img   class="img-responsive" src="/kyoto{{menuDatas.img_src}}"/> 
+
+
+	<ul id="horizontal-style">
+		<li  ng-repeat="tag in menuDatas.subtitle.split('&')">
+			<div>	
+				<a href="" class="subtitle">{{tag}}</a>
+			</div>	
+		</li>
+	</ul>
+	<h3 style="margin:10px 0 0 0 ;">{{menuDatas.title}}</h3>
+	<hr class="pink-line"></hr>
+</div>
+<div class"row" ng-repeat="content in contents">
+	<div class="container" >
+		<div class="left-text" >
+			
+				<img  ng-src="/kyoto{{content.img_src}}"/> 
+			
+		</div>
+
+		<div > 
+			<h3 style="margin:10px 0 0 0 ;">{{content.title}}</h3>
+			<ul class="list-inline" style="max-width:600px;">
+				<li  ng-repeat="tag in content.tag.split('&')">
+					<div>	
+						<img   src="/kyoto/images/bullet-tag.png"> 
+						
+						{{tag}}
+					</div>	
+				</li>
+			</ul>
+			<p  class="content-desc">{{content.description}}</p>
+
+			<a ng-click="openDialog(content)" class="more" translate>{{'more'}}</a>
+
+		</div>
+	</div>
+	<hr class="no-padding"></hr>
+</div>

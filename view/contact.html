@@ -1,0 +1,92 @@
+
+
+<div class="container">
+	<div class="pink-title" translate>{{'contact'}}</div>
+	<br/>
+	<img class="img-responsive" src="./images/contact-reception.png">
+	<br/><br/>
+	<div class="row">
+		<div class="col-md-4">
+			<img  class="img-responsive" src="./images/contact-bldng.png">
+		</div>
+		<div class="col-md-8">
+			<table class="table borderless contact-info">
+				<tr>
+					<td>
+						<img src="./images/contact/pin.png">
+					</td>
+					<td>
+						<p translate>{{'footer_address'}}</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="./images/contact/phone.png">
+					</td>
+					<td>
+						<p>76100130 99094931 99009626</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="./images/contact/mail.png">
+					</td>
+					<td>
+						<p>info@kyoto.mn</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="./images/contact/fb.png">
+					</td>
+					<td>
+						<p>/KYOTO medical esthetic</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="./images/contact/twtr.png">
+					</td>
+					<td>
+						<p>/KYOTO medical esthetic</p>
+					</td>
+				</tr>
+			</table>
+			<div class="contact-form">
+				<form>
+					<table class="table borderless contact-form">
+						<tr>
+							<td>
+								<div class="form-group">
+									<label for="name" translate>{{'yourname'}}</label>
+									<input type="text" class="form-control" id="name" ng-model="contact.name">
+								</div>
+							</td>
+							<td>
+								<div class="form-group">
+									<label for="email"translate>{{'email'}}</label>
+									<input type="email" class="form-control" id="email" ng-model="contact.email">
+								</div> 
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<div class="form-group">
+									<label for="sanal"translate>{{'faq'}}</label>
+									<input style="height:120px" type="text" class="form-control" id="sanal" ng-model="contact.report">
+								</div> 
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button ng-click="report(contact)" class="btn pink-button" translate>{{'send'}}</button>
+							</td>
+						</tr>
+					</table> 						
+				</form>
+			</div>
+		</div>				
+	</div>
+
+ <div align="center"><img class="img-responsive"src="./images/map.jpg" style="padding:15px;"></div>
+</div>

@@ -1,0 +1,98 @@
+<div class="container">
+	<div class="left-nav-pink" style="color:white;">Шинээр цэс нэмэх</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>Нэр Монгол</h4>
+		</div>
+		<div class="col-md-2">
+			<h4>Нэр Англи</h4>
+		</div>
+		<div class="col-md-2">
+			<h4>Таg Монгол</h4>
+		</div>
+		<div class="col-md-2">
+			<h4>Таg Англи</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<textarea type="text"  rows="1" ng-model="newmenu.title_mn" >
+			</textarea>
+		</div>
+		<div class="col-md-2">
+			<textarea type="text"  rows="1" ng-model="newmenu.title_en" >
+			</textarea>
+		</div>
+		<div class="col-md-2">
+			<textarea type="text"  rows="1" ng-model="newmenu.sub_mn" >
+			</textarea>
+		</div>
+		<div class="col-md-2">
+			<textarea type="text"  rows="1" ng-model="newmenu.sub_en" >
+			</textarea>
+		</div>
+
+	</div>
+	<div  style="padding:10px;">
+		<button type="button" class="btn btn-success" ng-click="addMenu(newmenu)" >Нэмэх</button>
+		
+	</div>
+
+
+	<select class="form-control" ng-options="menu1data as menu1data.title for menu1data in menu1"  ng-model="selectedItem" ng-change="update()">
+	</select>
+	<button type="button" class="btn btn-danger" ng-click="deleteMenu()" ng-confirm-click="Энэ цэсийг устгах уу">Цэсийг устгах</button>
+
+	<div style="padding-top:20px;">
+		<img   class="img-responsive" ng-src="/kyoto{{menuDatas.img_src}}"/> 
+
+
+		<div class="col-md-4">
+			<input type="file" nv-file-select="" uploader="uploader" />
+
+			<div class="progress" style="margin:10px 0px 10px 0px;">
+				<div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }">{{uploader.progress}}%</div>
+			</div>
+			<button type="button" class="btn btn-success btn-xs" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading ">Зураг солих
+			</button>
+		</div>
+		<ul id="horizontal-style">
+			<li  ng-repeat="tag in menuDatas.subtitle.split('&')">
+				<div>	
+
+					<a href="" class="subtitle">{{tag}}</a>
+				</div>	
+			</li>
+		</ul>
+		<h3 style="margin:10px 0 0 0 ;">{{menuDatas.title}}</h3>
+		<hr class="pink-line"></hr>
+	</div>
+
+	<a type="button" class="btn btn-default" ui-sref="newcontent({id:selectedItem.id})" >Шинээр өгөгдөл Нэмэх</a>
+
+	<div class"row" ng-repeat="content in contents">
+		<div class="container" >
+			<div class="left-text" >
+				
+				<img ng-src="/kyoto{{content.img_src}}"/> 
+				
+			</div>
+			<div > 
+				<h3 style="margin:10px 0 0 0 ;">{{content.title}}</h3>
+				<ul class="list-inline" style="max-width:600px;">
+					<li  ng-repeat="tag in content.tag.split('&')">
+						<div>	
+							<img   src="/kyoto/images/bullet-tag.png"> 
+							
+							{{tag}}
+						</div>	
+					</li>
+				</ul>
+				<p class="content-desc">{{content.description}}</p>
+
+			</div>
+		</div>
+		<button type="button" class="btn btn-danger" ng-click="deleteContent(contents,$index,content.id)" ng-confirm-click="Энэ өгөгдлийг устгах уу">Устгах</button>
+		<hr class="no-padding"></hr>
+	</div>
+</div>

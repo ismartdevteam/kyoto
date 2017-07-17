@@ -1,0 +1,234 @@
+
+<html ng-app="App">
+<head>
+  <title>KYOTO</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <meta name="author" content="KYOTO medical esthetic">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="stylesheets/mycss.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/lightbox.css">
+  <link rel="stylesheet" href="stylesheets/ngDialog.css">
+  <link rel="stylesheet" href="stylesheets/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="stylesheets/ngDialog-theme-plain.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body ng-controller="MainCtrl" >
+
+  <div class="container top-bar" >
+    <div class="row">
+      <div class="col-md-2 gray">
+       <a href="https://www.facebook.com/pages/KYOTO-medical-esthetic"> <i class="fa fa-facebook-official fa-lg"></i></a>
+       <a href="https://www.facebook.com/pages/KYOTO-medical-esthetic"> <i class="fa fa-twitter fa-lg"></i></a>
+       <a href="https://www.facebook.com/pages/KYOTO-medical-esthetic"> <i class="fa fa-instagram fa-lg"></i></a>
+     </div>
+     <div class="col-md-6 gray">  
+      <a href="mailto:info@kyoto.mn" target="_top"> <i class="fa fa-envelope-o"></i><span>INFO@KYOTO.MN</span></a>
+    </div>
+    <div class="col-md-2 gray lang">  
+      <a ng-click="changeLanguage('en_US')"  ng-class="{ 'lang-sel': 0== selectedIndex }">ENG</a>
+      <a ng-click="changeLanguage('mn_MN')"  ng-class="{ 'lang-sel': 1== selectedIndex }">MON</a>
+    </div>
+    <div class="col-md-2 gray">  
+      <a href="/kyoto/admin/index.html" > <i class="fa fa-user fa-lg"></i><span>{{ 'login' | translate }}</span></a>
+    </div>
+  </div>
+</div>
+<hr class="no-padding"></hr>
+<div class="container" >
+  <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div  class="navbar-toggle brand" >KYOTO medical esthetic</div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+          <span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder"> 
+       <a href="#/LEFT/11" translate><img src="images/logo.png"></a> 
+       <ul class="nav navbar-nav navbar-right">
+        <li ><a href="#/LEFT/11" translate>{{ 'home' }}</a>
+        </li>
+        <li><a href="#/ABOUT" translate>{{ 'about' }}</a>
+        </li>
+                    <!-- <li><a href="/about-us" translate>{{ 'service' }}</a>
+                  </li> -->
+                  <!--   <li><a href="/about-us" translate>{{ 'worrying' }}</a>
+                </li> -->
+                <li><a href="#/PRODUCT" translate>{{ 'product' }}</a>
+                </li>
+                <li><a href="#/CONTACT" translate>{{ 'contact' }}</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div ng-hide="main" id="myCarousel" class="carousel slide" data-ride="carousel" > 
+
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" ng-repeat="img in img_slider" class="{active : ($index == 0)}" data-slide-to="{{$index}}"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div ng-class="{item: true, active : ($index == 0)}" ng-repeat="img in img_slider"> <img ng-src="/kyoto/{{img.img_src}}" >
+            <div class="container">
+              <div class="carousel-caption"> </div>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> 
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      </div>
+      <div class="container" >
+        <div class="row welcome">
+          <div class="col-md-6 welcome-pink1" >
+            <h5 translate>{{'welcome'}}</h5>
+          </div>
+          <div class="col-md-3 welcome-pink2">
+            <hr class="no-padding" style="margin-top:8px;"></hr>
+            <div class="phone-text"><i class="fa fa-phone fa-5x"></i></div> <div class="rigth-text"> <p class="phone1">76100130</p><p class="phone2">99094931 99009626 </p></div>
+            <hr class="no-padding"></hr>
+          </div>
+
+
+          <div class="col-md-3 welcome-pink3">
+            <p class="phone2" style="font-weight: bold;" translate>{{'timetable'}}</p>
+            <hr class="no-padding"></hr>
+            <p class="phone2" translate>{{'timetable-days'}}</p>
+            <p class="phone2" translate>11 :00  20 :00</p>
+          </div>
+        </div>
+        <div class="bottom-shadow"></div>
+
+      </div>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-3" ng-repeat="bdata in banner">
+            <img ng-src="/kyoto/{{bdata.img_src}}">
+          </div>
+
+        </div>
+      </div>
+      <div class="container  white-body">
+
+        <div class="row">
+          <div class="col-sm-3" ng-hide="main" >
+            <div class="sidebar-nav">
+              <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <span class="visible-xs navbar-brand" translate>{{'left-nav'}}</span>
+                </div>
+                <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                  <ul class="nav navbar-nav left-nav">
+                    <li class="left-nav-pink"> <div style="display:inline;"><a style="color:white;" translate>{{'left-group1'}}</a>  </div></li>
+
+                    <li ng-repeat="menu1data in menu1"> <a href="#/LEFT/{{menu1data.id}}">{{menu1data.title}}</a></li>
+
+
+                    <li class="left-nav-pink"> <div style="display:inline;"><a style="color:white;" translate>{{'left-group2'}}</a>  </div></li>
+                    <li ng-repeat="menu2data in menu2"> <a href="#/LEFT/{{menu2data.id}}">{{menu2data.title}}</a></li>
+
+
+                    <li class="left-nav-pink"> <div style="display:inline;"><a style="color:white;" translate>{{'left-group3'}}</a>  </div></li>
+                    <li ng-repeat="menu3data in menu3"> <a href="#/LEFT/{{menu3data.id}}">{{menu3data.title}}</a></li>
+
+
+                    <li class="left-nav-pink"> <div style="display:inline;"><a style="color:white;" translate>{{'left-group4'}}</a> </div></li>
+                    <li ng-repeat="menu4data in menu4"> <a href="#/LEFT/{{menu4data.id}}">{{menu4data.title}}</a></li>
+                  </ul>
+                </div><!--/.nav-collapse -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-9" ng-view>
+
+          </div>
+        </div>
+      </div>
+
+      <script src="javascripts/jquery-1.11.1.min.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="javascripts/bootstrap.min.js"></script>
+
+
+
+
+      <script src="javascripts/angular/angular.js"></script>
+      <script src="javascripts/angular/angular-sanitize.js"></script>
+      <script src="javascripts/angular/angular-route.js"></script>
+      <script src="javascripts/angular/angular-cookies.min.js"></script>
+
+      <script src="javascripts/angular/angular-translate.min.js"></script>
+      <script src="javascripts/angular/angular-translate-interpolation-messageformat.js"></script>
+
+      <script src="javascripts/angular/angular-translate-loader-static-files.js"></script>
+      <script src="javascripts/angular/angular-translate-storage-cookie.js"></script>
+      <script src="javascripts/angular/angular-translate-storage-local.js"></script>
+
+      <script src="javascripts/responsiveslides.min.js"></script>    
+      <script src="javascripts/ngDialog.js"></script>
+      <script src="javascripts/myapp.js"></script>
+      <script src="javascripts/lightbox.js"></script>
+
+      <script>
+
+      $(function() {
+
+
+
+        $("#slider2").responsiveSlides({
+          auto: true,
+          speed: 500,
+          timeout: 60000
+        });
+
+      });
+      </script> 
+
+    </body>
+
+    <footer>
+      <img class="footer_shadow" src='images/bl-shadow.png'>
+      <div class=" container ">
+
+        <div class="col-md-4 footer_contact">
+          <h3 translate> {{'footer_contact_us'}} </h3>
+          <div class="frst_column">
+            <li > <a href="#/ABOUT" translate>{{'footer_about_us'}}</a></li>
+            <li ><a href="#/PRODUCT" translate>{{'footer_products'}}</a></li>
+            <li ><a href="#/CONTACT" translate>{{'footer_contact'}}</a></li>
+          </div>
+          <div class=" scnd_column">
+            <!-- <li translate>{{'footer_services'}}</li> -->
+            <li translate>{{'footer_reservation'}}</li>
+          </div>
+        </div>
+        <div class=" col-md-4 footer_salbar">
+          <h3 translate>{{'footer_faculty'}}</h3>
+          <p class="pink_text">Premiereclinic</p>
+          <img src="images/salbar.png">
+        </div>
+        <div class=" col-md-4 footer_address">
+          <h3 translate>{{'footer_address'}}</h3>
+          <img class="frst_column" style="margin-right:15px;" src="images/footer_marker.png">
+          <p class="scnd_column;" translate>{{'footer_address_info'}}</p>
+        </div>
+      </div>
+    </footer>
+    </html>

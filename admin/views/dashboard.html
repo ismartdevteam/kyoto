@@ -1,0 +1,59 @@
+
+<div class="container" >
+  <div id="custom-bootstrap-menu" class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div  class="navbar-toggle brand" >KYOTO medical esthetic</div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+          <span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-menubuilder"> 
+       <img src="../images/logo.png">
+       <ul class="nav navbar-nav navbar-right">
+
+        <li> <a ui-sref="login" >Гарах</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container  white-body" >
+
+  <div class="row">
+    <div class="col-sm-3" ng-hide="main" >
+      <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <span class="visible-xs navbar-brand"  >Админ</span>
+          </div>
+          <div class="navbar-collapse collapse sidebar-navbar-collapse">
+            <ul class="nav navbar-nav left-nav">
+              <li class="left-nav-pink"> <div style="display:inline;"><a style="color:white;"  >Админ</a>  </div></li>
+
+              <li ><a  ui-sref="menu({menu_id:1})">Санаа зовсон асуудал</a></li>
+              <li ><a ui-sref="menu({menu_id:2})">Эмчилгээ</a></li>
+              <li ><a ui-sref="menu({menu_id:3})">WOMEN'S SPECIAL</a></li>
+              <li ><a ui-sref="menu({menu_id:4})">MEN'S SPECIAL</a></li>
+              <li ><a ui-sref="slider">Нүүр хуудасны Зураг</a></li>
+              <li ><a ui-sref="banner">Banner Зураг</a></li>
+              <li ><a ui-sref="product">Бүтээгдэхүүн </a></li>
+                        <li ><a ui-sref="report">Санал хүсэлт </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9"  ui-view>
+    </div>
+  </div>
+</div>

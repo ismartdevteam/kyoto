@@ -1,0 +1,16 @@
+<div class="container" >
+	<img  class="img-responsive" ng-src="/kyoto{{content.img_src}}"/> 
+	<div > 
+		<h3 style="margin:10px 0 0 0 ;">{{content.title}}</h3>
+		<ul class="list-inline" style="max-width:600px;">
+			<li  ng-repeat="tag in content.tag.split('&')">
+				<div>	
+					<img   src="/kyoto/images/bullet-tag.png"> 
+					{{tag}}
+				</div>	
+			</li>
+		</ul>
+		<p >{{content.description}}</p>
+
+	</div>
+</div>

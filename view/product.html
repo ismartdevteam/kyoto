@@ -1,0 +1,19 @@
+
+<div class"row" ng-repeat="content in product">
+	<div class="container" >
+		<div class="left-text" >
+			<img src="/kyoto{{content.img_src}}"/>
+		</div>
+
+		<div > 
+			<h3 style="margin:10px 0 0 0 ;">{{content.title}}</h3>
+			
+			<p  class="product-desc">{{content.description}}</p>
+						<a ng-click="openDialog(content)" class="more" translate>{{'more'}}</a>
+			<div align="right">
+				<span translate  class="h2">{{'price'}}</span> 
+				<span class="h2 price-tag">{{content.price}}</span>  </div>
+			</div>
+		</div>
+		<hr class="no-padding"></hr>
+	</div>

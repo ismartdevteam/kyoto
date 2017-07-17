@@ -1,0 +1,14 @@
+<div id="login-page">
+  <div align="center"><img class="img-responsive" src="../images/logo.png"/></div>
+  <div id="triangle"></div>
+
+  <h1>KYOTO medical esthetic</h1>
+
+  <form>
+    <input type="text" class="username" placeholder="Хэрэглэгчийн нэр"ng-model="user.name" style="margin-top:20px;" required />
+    <input type="password" placeholder="Нууц үг" ng-model="user.pass" required />
+    <input type="submit" ng-click="login(user)" value="Нэвтрэх" />
+      <h1 style="background:none;color:red">{{msgtxt}}</h1>
+  </form>
+
+</div>

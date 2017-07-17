@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="left-nav-pink" style="color:white;">Шинээр өгөгдөл нэмэх</div>
+	<input class="form-control" style="margin:10px;"  type="text" ng-model="newcontent.title_mn" placeholder="Нэр Монгол" required>
+	<input class="form-control" style="margin:10px;"type="text" ng-model="newcontent.title_en" placeholder="Нэр Англи">
+	<input type="text" class="form-control"style="margin:10px; height:200px;" ng-model="newcontent.desc_mn" placeholder="Тайлбар Монгол">
+	<input type="text" class="form-control" style="margin:10px;height:200px;"ng-model="newcontent.desc_en" placeholder="Тайлбар Англи">
+	<input type="text" class="form-control"style="margin:10px;" ng-model="newcontent.tag_mn" placeholder="Tag Монгол">
+	<input type="text" class="form-control" style="margin:10px;"ng-model="newcontent.tag_en" placeholder="Tag Англи">
+	<div class="col-md-4">
+		<input type="file" nv-file-select="" uploader="uploader" />
+
+		<div class="progress" style="margin:10px 0px 10px 0px;">
+			<div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }">{{uploader.progress}}%</div>
+		</div>
+		<button type="button" class="btn btn-success btn-xs" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading ">
+			ХАДГАЛАХ
+		</button>
+	</div>
+</div>

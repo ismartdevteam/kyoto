@@ -1,0 +1,11 @@
+<div>
+
+	<div ng-repeat="report in reports">
+		<p> <strong>Нэр </strong>{{report.name}}</p>
+		<p> <strong>Email </strong>{{report.email}}</p>
+		<p> <strong>Санал </strong>{{report.report}}</p>
+		<p> <strong>Огноо </strong>{{report.date}}</p>
+		<button type="button" class="btn btn-danger" ng-click="delete(reports,$index,report.id)" ng-confirm-click="Устгах уу"> Устгах</button>
+		<hr class="pink-line"></hr>
+	</div>
+</div>

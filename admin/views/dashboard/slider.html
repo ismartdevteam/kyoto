@@ -1,0 +1,22 @@
+<div class="container" >
+	<div class="left-nav-pink" style="color:white;">Шинээр зураг нэмэх</div>
+
+	<div  style="padding:10px;">
+		<input type="file" nv-file-select="" uploader="uploader" />
+
+		<div class="progress" style="margin:10px 0px 10px 0px;">
+			<div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }">{{uploader.progress}}%</div>
+		</div>
+		<button type="button" class="btn btn-success btn-xs" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading ">
+			Нэмэх
+		</button>
+	</div>
+
+	<div ng-repeat="img in img_slider">
+			<div class="crop">
+				<img ng-src="/kyoto/{{img.img_src}}"/> 
+			</div>
+			<button type="button" class="btn btn-danger" ng-click="deletePic(img_slider,$index,img.id)" ng-confirm-click="Зураг устгах уу"> Устгах</button>
+				<hr class="pink-line"></hr>
+	</div>
+</div>
